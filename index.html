@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXORA AI</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+min-height:100vh;
+background:
+radial-gradient(circle at left,#00e5ff22,transparent 30%),
+radial-gradient(circle at right,#ffd70022,transparent 30%),
+linear-gradient(135deg,#050816,#020617,#050816);
+color:white;
+text-align:center;
+padding:50px 20px;
+}
+
+.logo{
+font-size:52px;
+font-weight:700;
+letter-spacing:3px;
+margin-bottom:10px;
+}
+
+.blue{
+color:#00E5FF;
+}
+
+.gold{
+color:#FFD700;
+}
+
+.subtitle{
+font-size:22px;
+color:#d1d5db;
+margin-bottom:40px;
+}
+
+.search{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+input{
+width:420px;
+padding:16px;
+border:none;
+border-radius:14px;
+background:#111827;
+color:white;
+font-size:18px;
+}
+
+button{
+padding:16px 30px;
+border:none;
+border-radius:14px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:linear-gradient(45deg,#00E5FF,#00A3FF);
+color:black;
+box-shadow:0 0 20px rgba(0,229,255,.4);
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+#result{
+max-width:850px;
+margin:35px auto;
+padding:30px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+font-size:22px;
+line-height:1.8;
+text-align:left;
+}
+
+.copyBtn{
+margin-top:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1000px;
+margin:40px auto;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(0,229,255,.25);
+}
+
+.card h3{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+<span class="blue">LUX</span><span class="gold">ORA AI</span>
+</div>
+
+<div class="subtitle">
+Generate Viral Titles In Seconds
+</div>
+
+<div class="search">
+
+<input
+type="text"
+id="topic"
+placeholder="Enter Topic">
+
+<button onclick="generateTitles()">
+Generate
+</button>
+
+</div>
+
+<div id="result">
+🔥 Enter a topic and click Generate
+</div>
+
+<button class="copyBtn" onclick="copyTitles()">
+Copy Titles
+</button>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎯 Titles</h3>
+<p>Thumbnail Title Generator</p>
+</div>
+
+<div class="card">
+<h3>🔥 Hashtags</h3>
+<p>Trending Hashtag Generator</p>
+</div>
+
+<div class="card">
+<h3>🚀 Ideas</h3>
+<p>Video Idea Generator</p>
+</div>
+
+<div class="card">
+<h3>💰 Fiverr</h3>
+<p>Gig Title Generator</p>
+</div>
+
+</div>
+
+<script>
+
+function generateTitles(){
+
+let topic =
+document.getElementById("topic").value;
+
+if(topic==""){
+
+document.getElementById("result").innerHTML=
+"⚠️ Please enter a topic";
+
+return;
+
+}
+
+document.getElementById("result").innerHTML=
+
+"🔥 10 Viral Titles For <b>"+topic+"</b><br><br>"+
+
+"1. Secret About "+topic+"<br>"+
+"2. Top 10 "+topic+" Tips<br>"+
+"3. Hidden "+topic+" Secrets<br>"+
+"4. Nobody Knows This "+topic+" Trick<br>"+
+"5. Best "+topic+" Strategy<br>"+
+"6. Beginner Guide To "+topic+"<br>"+
+"7. Shocking Facts About "+topic+"<br>"+
+"8. How To Master "+topic+"<br>"+
+"9. Viral "+topic+" Ideas<br>"+
+"10. Earn More With "+topic;
+
+}
+
+function copyTitles(){
+
+let text =
+document.getElementById("result").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("✅ Titles Copied!");
+
+}
+
+</script>
+
+</body>
+</html>
